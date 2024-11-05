@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Iq7jUSo9B/c=",
+  "success": true,
+  "projectFilePath": "/Users/victorbrandao/RiderProjects/Instafollow/Instafollow/Instafollow.csproj",
+  "expectedPackageFiles": [
+    "/Users/victorbrandao/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

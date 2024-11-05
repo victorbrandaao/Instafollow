@@ -1,0 +1,130 @@
+@model IFormFile
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload de Arquivo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .tutorial {
+            background-color: #e9ecef;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .tutorial h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .step .icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-right: 15px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-top: 1px solid #ccc;
+        }
+        footer a {
+            margin: 0 10px;
+            color: #ffffff;
+        }
+        footer a:hover {
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="mb-4">Upload de Arquivo</h1>
+
+    <!-- Explicação do Aplicativo -->
+    <p>Este aplicativo permite que você faça o upload de um arquivo JSON baixado do seu perfil do Instagram. A ferramenta irá analisar seus dados e mostrar quem são seus seguidores mútuos e quem deixou de seguir você. Siga o tutorial abaixo para aprender como baixar seu arquivo JSON do Instagram e fazer o upload.</p>
+
+    <!-- Formulário de Upload -->
+    <form asp-action="Upload" asp-controller="Instagram" method="post" enctype="multipart/form-data" class="mb-4">
+        <div class="form-group">
+            <label for="file" class="form-label">Selecione um arquivo:</label>
+            <input type="file" id="file" name="file" class="form-control-file" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Upload</button>
+    </form>
+
+    <!-- Tutorial -->
+    <div class="tutorial">
+        <h2>Como baixar seu arquivo JSON do Instagram</h2>
+        <div class="step">
+            <i class="fas fa-cog icon"></i>
+            <p>1. Acesse o seu perfil no <strong>Instagram</strong> e toque no ícone de <strong>Configurações</strong>.</p>
+        </div>
+        <div class="step">
+            <i class="fas fa-shield-alt icon"></i>
+            <p>2. Vá até <strong>Segurança</strong> e selecione <strong>Baixar dados</strong>.</p>
+        </div>
+        <div class="step">
+            <i class="fas fa-envelope icon"></i>
+            <p>3. Confirme seu e-mail e toque em <strong>Solicitar download</strong>. O Instagram enviará uma cópia dos seus dados para o seu e-mail.</p>
+        </div>
+        <div class="step">
+            <i class="fas fa-download icon"></i>
+            <p>4. Verifique seu e-mail e baixe o arquivo JSON fornecido pelo Instagram.</p>
+        </div>
+        <div class="step">
+            <i class="fas fa-upload icon"></i>
+            <p>5. Após o download, retorne a esta página e faça o upload do arquivo utilizando o formulário acima.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>Victor Brandão</p>
+    <a href="https://www.instagram.com/victorbrandaao" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/victorbrandaao" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
