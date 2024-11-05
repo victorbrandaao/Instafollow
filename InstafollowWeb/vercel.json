@@ -2,14 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "InstafollowWeb.csproj",
+      "src": "InstafollowWeb/InstafollowWeb.csproj",
       "use": "@vercel/dotnet"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "InstafollowWeb.dll"
+      "dest": "InstafollowWeb/InstafollowWeb.dll"
     }
-  ]
+  ],
+  "env": {
+    "ASPNETCORE_ENVIRONMENT": "Production"
+  },
+  "functions": {
+    "api/*.cs": {
+      "runtime": "dotnet"
+    }
+  }
 }
