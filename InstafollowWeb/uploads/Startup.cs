@@ -13,13 +13,11 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
-    // Este método é chamado pelo runtime. Use este método para adicionar serviços ao contêiner.
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
     }
 
-    // Este método é chamado pelo runtime. Use este método para configurar o pipeline de solicitação HTTP.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         if (env.IsDevelopment())
@@ -43,7 +41,7 @@ public class Startup
         {
             endpoints.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Instagram}/{action=Upload}/{id?}");
+                pattern: "{controller=Instagram}/{action=Index}/{id?}");
         });
     }
 }

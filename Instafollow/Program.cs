@@ -1,53 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json.Linq;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
 
-class InstagramFollowers
+public class Program
 {
-    static void Main()
+    public static void Main(string[] args)
     {
         try
         {
-            var data = LoadJson("caminho/para/seu/arquivo.json");
-            var followers = ExtractList(data, "followers");
-            var following = ExtractList(data, "following");
-
-            var mutualFollowers = FindMutualFollowers(followers, following);
-            var unfollowers = FindUnfollowers(following, followers);
-
-            DisplayResults("Seguidores mútuos:", mutualFollowers);
-            DisplayResults("\nUsuários que deixaram de seguir:", unfollowers);
+            CreateHostBuilder(args).Build().Run();
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Erro: {ex.Message}");
+            // Log the exception
+            Console.WriteLine($"Host terminated unexpectedly: {ex.Message}");
         }
     }
 
-    static JObject LoadJson(string path)
-    {
-        return JObject.Parse(File.ReadAllText(path));
-    }
-
-    static List<string> ExtractList(JObject data, string key)
-    {
-        return data[key].ToObject<List<string>>();
-    }
-
-    static List<string> FindMutualFollowers(List<string> followers, List<string> following)
-    {
-        return followers.FindAll(following.Contains);
-    }
-
-    static List<string> FindUnfollowers(List<string> following, List<string> followers)
-    {
-        return following.FindAll(f => !followers.Contains(f));
-    }
-
-    static void DisplayResults(string message, List<string> list)
-    {
-        Console.WriteLine(message);
-        list.ForEach(Console.WriteLine);
-    }
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+                webBuilder.UseKestrel(options =>
+                {
+                    options.ListenAnyIP(5000); // Porta HTTP
+                    options.ListenAnyIP(5001, listenOptions =>
+                    {
+                        listenOptions.UseHttps(); // Porta HTTPS
+                    });
+                });
+            })
+            .ConfigureLogging(logging =>
+            {
+                logging.ClearProviders();
+                logging.AddConsole();
+            });
 }

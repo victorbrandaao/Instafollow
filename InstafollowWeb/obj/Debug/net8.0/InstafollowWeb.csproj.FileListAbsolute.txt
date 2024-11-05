@@ -31,3 +31,6 @@
 /Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/obj/Debug/net8.0/InstafollowWeb.pdb
 /Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/obj/Debug/net8.0/InstafollowWeb.genruntimeconfig.cache
 /Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/obj/Debug/net8.0/ref/InstafollowWeb.dll
+/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/obj/Debug/net8.0/InstafollowWeb.sourcelink.json
+/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/bin/Debug/net8.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll

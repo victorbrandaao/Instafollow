@@ -1,0 +1,79 @@
+@{
+    ViewBag.Title = "Análise de Seguidores Mútuos";
+    var nonFollowers = ViewBag.NonFollowers as List<string> ?? new List<string>();
+    var nonFollowings = ViewBag.NonFollowings as List<string> ?? new List<string>();
+    var message = ViewBag.Message as string;
+}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #343a40;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>@ViewBag.Title</h1>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert alert-danger error-message">@message</div>
+        }
+
+        <h3>Quem eu sigo e não me segue de volta:</h3>
+        <ul class="list-group">
+            @if (nonFollowers.Count > 0)
+            {
+                foreach (var user in nonFollowers)
+                {
+                    <li class="list-group-item">@user</li>
+                }
+            }
+            else
+            {
+                <li class="list-group-item">Nenhum usuário encontrado.</li>
+            }
+        </ul>
+
+        <h3>Quem não me segue de volta:</h3>
+        <ul class="list-group">
+            @if (nonFollowings.Count > 0)
+            {
+                foreach (var user in nonFollowings)
+                {
+                    <li class="list-group-item">@user</li>
+                }
+            }
+            else
+            {
+                <li class="list-group-item">Nenhum usuário encontrado.</li>
+            }
+        </ul>
+
+        <a href="/" class="btn btn-primary mt-4">Voltar</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

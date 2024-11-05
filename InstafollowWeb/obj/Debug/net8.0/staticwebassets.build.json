@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "W6GKo0eYpWifeeuaOv5pE98M/WuU1WCDGHYx72RCEaI=",
+  "Hash": "Ow9yFJ4P9gbMiWcjpDudeytS7NOCzGOrHvzahD5fpUU=",
   "Source": "InstafollowWeb",
   "BasePath": "_content/InstafollowWeb",
   "Mode": "Default",
@@ -1193,6 +1193,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/wwwroot/uploads/followers_1.json",
+      "SourceId": "InstafollowWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/wwwroot/",
+      "BasePath": "_content/InstafollowWeb",
+      "RelativePath": "uploads/followers_1.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/followers_1.json"
+    },
+    {
+      "Identity": "/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/wwwroot/uploads/following.json",
+      "SourceId": "InstafollowWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/wwwroot/",
+      "BasePath": "_content/InstafollowWeb",
+      "RelativePath": "uploads/following.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/following.json"
     }
   ]
 }

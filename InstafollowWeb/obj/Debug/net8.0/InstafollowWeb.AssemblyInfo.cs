@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InstafollowWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10bcd7cb3f277d5aa3d6ac311d14d6bae697bf3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("InstafollowWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InstafollowWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

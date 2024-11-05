@@ -245,6 +245,14 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/wwwroot/uploads/followers_1.json",
+      "PackagePath": "staticwebassets/uploads/followers_1.json"
+    },
+    {
+      "Id": "/Users/victorbrandao/RiderProjects/Instafollow/InstafollowWeb/wwwroot/uploads/following.json",
+      "PackagePath": "staticwebassets/uploads/following.json"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.InstafollowWeb.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

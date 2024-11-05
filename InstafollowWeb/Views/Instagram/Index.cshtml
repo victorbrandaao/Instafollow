@@ -1,11 +1,13 @@
-@model IFormFile
+@{
+    ViewBag.Title = "Upload de Arquivo";
+}
 
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Upload de Arquivo</title>
+    <title>@ViewBag.Title</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -76,20 +78,20 @@
     <h1 class="mb-4">Upload de Arquivo</h1>
 
     <!-- Explicação do Aplicativo -->
-    <p>Este aplicativo permite que você faça o upload de um arquivo JSON baixado do seu perfil do Instagram. A ferramenta irá analisar seus dados e mostrar quem são seus seguidores mútuos e quem deixou de seguir você. Siga o tutorial abaixo para aprender como baixar seu arquivo JSON do Instagram e fazer o upload.</p>
+    <p>Este aplicativo permite que você faça o upload de dois arquivos JSON baixados do seu perfil do Instagram. A ferramenta irá analisar seus dados e mostrar quem são seus seguidores mútuos e quem deixou de seguir você. Siga o tutorial abaixo para aprender como baixar seus arquivos JSON do Instagram e fazer o upload.</p>
 
     <!-- Formulário de Upload -->
     <form asp-action="Upload" asp-controller="Instagram" method="post" enctype="multipart/form-data" class="mb-4">
         <div class="form-group">
-            <label for="file" class="form-label">Selecione um arquivo:</label>
-            <input type="file" id="file" name="file" class="form-control-file" />
+            <label for="files" class="form-label">Selecione os arquivos:</label>
+            <input type="file" id="files" name="files" class="form-control-file" multiple />
         </div>
         <button type="submit" class="btn btn-primary btn-block">Upload</button>
     </form>
 
     <!-- Tutorial -->
     <div class="tutorial">
-        <h2>Como baixar seu arquivo JSON do Instagram</h2>
+        <h2>Como baixar seus arquivos JSON do Instagram</h2>
         <div class="step">
             <i class="fas fa-cog icon"></i>
             <p>1. Acesse o seu perfil no <strong>Instagram</strong> e toque no ícone de <strong>Configurações</strong>.</p>
@@ -104,13 +106,18 @@
         </div>
         <div class="step">
             <i class="fas fa-download icon"></i>
-            <p>4. Verifique seu e-mail e baixe o arquivo JSON fornecido pelo Instagram.</p>
+            <p>4. Verifique seu e-mail e baixe os arquivos JSON fornecidos pelo Instagram.</p>
         </div>
         <div class="step">
             <i class="fas fa-upload icon"></i>
-            <p>5. Após o download, retorne a esta página e faça o upload do arquivo utilizando o formulário acima.</p>
+            <p>5. Após o download, retorne a esta página e faça o upload dos arquivos utilizando o formulário acima.</p>
         </div>
     </div>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-info">@ViewBag.Message</div>
+    }
 </div>
 
 <!-- Rodapé -->
